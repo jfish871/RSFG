@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+#trims blank lines from a text file
+grep . TempFiles/Sorted.txt > TempFiles/Sorted-N.txt # delete the blank lines in file

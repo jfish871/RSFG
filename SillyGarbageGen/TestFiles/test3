@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+#This script will ask the user to enter a value, then see if that value will get passed into another script.
+
+echo "Enter a Value S or Other: "
+read x
+echo $x
+echo $x > Value.txt
+
+#check if the user entered S and call the program
+
+if [ $x = 'S' ]; then
+	echo "S"
+	./GarbageGen
+else
+	echo "Other"
+	./GarbageGen
+fi

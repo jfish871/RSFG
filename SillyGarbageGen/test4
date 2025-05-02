@@ -1,0 +1,2 @@
+a=$( wc -m README.txt | tr -d [:alpha:] | tr -d '.' )
+echo $a
