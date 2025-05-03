@@ -1,0 +1,9 @@
+#generates a random string
+#
+#!/bin/bash
+a=()
+for b in {-Billy-, -Bob-, -Brenda-, -Hank-, -Alvin-,-Bananna-, -Aardvark-} {-Apple-, -Cheese-, -Potato-, -Bacon-, -Bread-, -Butter-, -Beans-} {-Keyboard-, -Computer-, -Mouse-, -CPU-, -RAM-, -SSD-, -GPU-};
+	do
+	a[$RANDOM]=$b
+done
+printf %s ${a[@]::6} $'\n'

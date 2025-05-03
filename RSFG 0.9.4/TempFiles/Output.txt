@@ -1,0 +1,22 @@
+
+1     | Bacon
+1     | Bob
+1     | Bread
+2     | Apple
+2     | Beans
+2     | Brenda
+2     | Butter
+2     | Keyboard
+2     | RAM
+3     | Aardvark
+3     | Alvin
+3     | Bananna
+3     | CPU
+3     | Hank
+3     | Mouse
+3     | SSD
+3     | SSD 
+4     | Potato
+5     | Cheese
+6     | Billy
+6     | Computer

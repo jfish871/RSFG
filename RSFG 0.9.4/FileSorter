@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+#breaks down and sorts Clean.txt
+#
+
+b=$(cat TempFiles/Value.txt) #reads user input from Value.txt
+
+if [ $b = 'S' ]; then # silent mode
+	more TempFiles/Clean.txt | tr ' ' '\n' | tr -s '\n' | sort > TempFiles/Sorted.txt 	
+									# opens Clean.txt, replaces spaces with newlines,
+									# removes extra newlines, sorts the file
+									# records the result to Sorted.txt
+else
+	echo
+	echo 'Sorting Clean.txt'
+	echo
+	more TempFiles/Clean.txt | tr ' ' '\n' | tr -s '\n' | sort  > TempFiles/Sorted.txt   
+
+	echo
+	echo 'Script Complete'
+fi

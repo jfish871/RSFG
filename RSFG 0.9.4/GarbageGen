@@ -1,0 +1,33 @@
+#!/usr/bin/bash
+#generates a file full of random junk
+#
+# set envrioment var from Value.txt
+
+a=$(cat TempFiles/Value.txt) # reads user input
+
+if [ $a = 'S' ]; then # silent mode
+	touch TempFiles/Junk.txt # creates Junk.txt if it does not exist.
+	for a in {1..9}
+	do
+	./RandomGen >> TempFiles/Junk.txt # runs the random gen command 9 times and appends the results to Junk.txt
+	done
+else
+	echo
+	echo 'Creating an empty file: Junk.txt, or updating the time stamp if the file already exists.'
+	echo
+	touch TempFiles/Junk.txt
+	echo
+	echo 'appending junk to file'
+	#starting for loop
+	for a in {1..9}
+	do
+		echo >> TempFiles/Junk.txt
+		./RandomGen >> TempFiles/Junk.txt
+		echo >> TempFiles/Junk.txt
+	done
+	echo
+	echo 'script complete'
+fi
+	
+
+

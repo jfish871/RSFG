@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+#program that cleans up Junk.txt
+
+c=$(cat TempFiles/Value.txt) #reads the value of Value.txt, determines if the program runs in silent or verbose mode.
+
+if [ $c = 'S' ]; then #silent mode
+	more TempFiles/Junk.txt | tr '{},' ' ' | tr -d ' ' | tr '-' ' ' | tr -s ' ' > TempFiles/Clean.txt 	
+											# removes the junk chars, deletes spaces
+											# replaces the dashes with spaces
+											# removes extra spaces
+											# records the output to Clean.txt
+else
+	echo
+	echo 'Cleaning Junk.txt'
+	echo
+	echo 'Removing {} , '
+	echo
+	echo 'Creating Clean.txt'
+	echo
+	echo 'Cleaning File'
+	echo
+	more TempFiles/Junk.txt | tr '{},' ' ' | tr -d ' ' | tr '-' ' ' | tr -s ' ' > TempFiles/Clean.txt
+	echo 'script complete'
+fi
