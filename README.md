@@ -7,5 +7,4 @@ You might need to make the program files executable. To do so, run chmod +x * to
 
 If you have any issues, uh, well I’m not sure what you expected to be honest. 
 
-**Please make sure to read through all the code before running anything, just to make sure it won’t damage your system. It should all be safe, however these are random scripts you downloaded off the internet. Its always a good idea to see what they do before running them. 
-**
+Please make sure to read through all the code before running anything, just to make sure it won’t damage your system. It should all be safe, however these are random scripts you downloaded off the internet. Its always a good idea to see what they do before running them. 
