@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-
-a=$(grep . TempFiles/Sorted.txt) # trims blank lines and stores the output into var a
-#echo $a > TempFiles/Sorted.txt
-
-while read $a; do
- echo $a
-done < TempFiles/Sorted.txt
