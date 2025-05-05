@@ -1,0 +1,23 @@
+9     | SSD 
+19    | Bread
+11    | Keyboard
+7     | Alvin
+9     | Billy
+12    | Brenda
+11    | Cheese
+11    | Bob
+13    | Computer
+2     | Butter
+14    | Mouse
+13    | Bacon
+9     | Hank
+12    | CPU
+10    | Potato
+
+14    | Apple
+7     | Aardvark
+13    | RAM
+9     | SSD
+7     | Bananna
+9     | Beans
+11    | GPU

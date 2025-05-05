@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+#generates a random string
+a=() # creates empty list
+for b in {-Billy-, -Bob-, -Brenda-, -Hank-, -Alvin-,-Bananna-, -Aardvark-} {-Apple-, -Cheese-, -Potato-, -Bacon-, -Bread-, -Butter-, -Beans-} {-Keyboard-, -Computer-, -Mouse-, -CPU-, -RAM-, -SSD-, -GPU-};
+	do
+	a[$RANDOM]=$b # uses the random enviroment var to iderate through the choices above
+done
+printf %s ${a[@]::6} $'\n' # chooses 6 random values
