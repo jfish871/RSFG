@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Author: Cyber-Yoda
+# Generates a random string using awk and sed, without echo
+# Project: RSFG-rewrite
+# Description: Refactor that generates a random string using awk and sed rather than echo
+
+generator() {
+
+  wordlist='{Billy, Duran, Brenda, Dragonfruit, Apple, Bananna, Grape} {Apple, Cheese, Potato, Pork, Bread, Butter, Beans} {Keyboard, Computer, Mouse, CPU, RAM, HDD, GPU}'
+
+  # Use printf instead of echo, sed to clean it up, tr it into newline-separated words, and awk 6 lines
+  printf '%s\n' "$wordlist" | \
+    sed -e 's/[{}]//g' -e 's/,//g' | \
+    tr ' ' '\n' | \
+    awk -v n=6 'BEGIN {srand()} {a[NR]=$0} END {for(i=0;i<n;i++) print a[int(rand()*NR)+1]}'
+}
+
+generator
