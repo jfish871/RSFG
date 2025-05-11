@@ -3,17 +3,26 @@
 # Author: Cyber-Yoda
 # Generates a random string using awk and sed, without echo
 # Project: RSFG-rewrite
-# Description: Refactor that generates a random string using awk and sed rather than echo
+# Description: Factor of majority
 
 generator() {
-
-  wordlist='{Billy, Duran, Brenda, Dragonfruit, Apple, Bananna, Grape} {Apple, Cheese, Potato, Pork, Bread, Butter, Beans} {Keyboard, Computer, Mouse, CPU, RAM, HDD, GPU}'
+  # lists and arrays
+  wordlist='{Billy, Duran, Brenda, Dragonfruit, Apple, Bananna, Grape} {Apple, Cheese, Potato, Pork, Bread, Butter, Beans} {Keyboard, Computer, Mouse, CPU, RAM, HDD, GPU} {Doggy, Flamingo, Frog, Kitten, Bird, Eagle, Capybara} {Autism, Epilepsy, PTSD, Depression} {Motherboard, Chipset, Periphral Component Interconnect, Pin Grid Array, Land Grid Array}'
 
   # Use printf instead of echo, sed to clean it up, tr it into newline-separated words, and awk 6 lines
   printf '%s\n' "$wordlist" | \
     sed -e 's/[{}]//g' -e 's/,//g' | \
     tr ' ' '\n' | \
-    awk -v n=6 'BEGIN {srand()} {a[NR]=$0} END {for(i=0;i<n;i++) print a[int(rand()*NR)+1]}'
+    awk -v n=9 'BEGIN {srand()} {a[NR]=$0} END {
+        # Fisher-Yates Shuffle
+        for (i=NR; i > 1; i--) {
+            j = int(rand() * i) + 1
+            tmp = a[i]; a[i] = a[j]; a[j] = tmp
+        }
+        for (k = 1; k <=6 && k <= NR; k++) {
+            print a[k]
+        }
+    }'
 }
 
 generator
