@@ -1,6 +1,12 @@
 #!/usr/bin/bash
-#generates a file full of random junk
+
 #
+# Author: cyber-yoda
+# 
+# Description: generates a file full of random data
+#
+
+
 # set envrioment var from Value.txt
 
 a=$(cat TempFiles/Value.txt) # reads user input
@@ -14,13 +20,13 @@ if [ $a = 'S' ] || [ $a = 's' ]; then # silent mode
 	echo >> TempFiles/Junk.txt
 	done
 elif [ $a = 'V' ] || [ $a = 'v' ]; then
-	echo
-	echo 'Creating an empty file: Junk.txt, or updating the time stamp if the file already exists...'
-	echo
+	printf
+	printf 'Creating an empty file: Junk.txt, or updating the time stamp if the file already exists...'
+	printf
 	touch TempFiles/Junk.txt
-	echo
-	echo 'Appending junk to file...'
-	echo
+	printf
+	printf 'Appending junk to file...'
+	printf
 	#starting for loop
 	for a in {1..9}
 	do
@@ -28,13 +34,13 @@ elif [ $a = 'V' ] || [ $a = 'v' ]; then
 		./RandomGen >> TempFiles/Junk.txt
 		echo >> TempFiles/Junk.txt
 	done
-	echo
-	echo 'Script complete'
-	echo
+	printf
+	printf 'Script complete'
+	printf
 
 else
 
-	echo $a ": Expected S/s or V/v"
+	printf $a ": Expected S/s or V/v"
 
 fi
 	
