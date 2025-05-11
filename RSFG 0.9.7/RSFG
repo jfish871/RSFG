@@ -2,33 +2,32 @@
 # a silly script that, creates a garbage file, cleans the file, then sorts the output
 #
 
-./DeleteUtil
+#./DeleteUtil
 
-echo
-echo -n "Enter S for Silent Mode, enter  V for Verbose Mode: "
+printf "Enter S for Silent Mode, enter  V for Verbose Mode: "
 read x
 
 #rm -v TempFiles/Value.txt
-echo $x > TempFiles/Value.txt #Submitting User input to a file to be read back by the other sub programs. This will set them into either silent or verbose mode.
+printf "%s\n" $x > TempFiles/Value.txt #Submitting User input to a file to be read back by the other sub programs. This will set them into either silent or verbose mode.
 	
 if [ $x = 'S' ] || [ $x = 's' ]; then #If the user entered S, then it will run the all the sub programs in silent mode.
-	echo
+	printf
 	./GarbageGen #Runs the GarbageGen module, creates a garbage file.
 	sleep 1
 	./FileCleaner #Runs the FileCleaner module, cleans the file and preps it for the sorting module.
 	sleep 1
 	./FileSorter #Runs the FileSorter Module, sorts the contents of the file in alphabetical order. 
 	sleep 1
-	echo 'Output file is TempFiles/Sorted.txt'
+	printf 'Output file is TempFiles/Sorted.txt'
 	sleep 1
 	./FileAnalyser # Runs the FileAnalyzer Module, allows for analysis of the final output
 
 
 elif [ $x = 'V' ] || [ $x = 'v' ]; then
 	# creating garbage file
-	echo
-	echo 'Creating silly garbage file!'
-	echo
+	printf "\n"
+	printf "Creating silly garbage file!"
+	printf "\n"
 	sleep 4
 	#running GarbageGen
 	./GarbageGen
@@ -37,21 +36,21 @@ elif [ $x = 'V' ] || [ $x = 'v' ]; then
 	more TempFiles/Junk.txt # displying the output of GarbageGen
 	./Div
 	# running FileCleaner to clean the file
-	echo
-	echo 'Cleaning GarbageFile'
-	echo
+	printf "\n"
+	printf " [*] Cleaning GarbageFile"
+	printf "\n"
 	sleep 4
-	echo
+	printf "\n"
 	#running file cleaner
 	./FileCleaner
-	echo
+	printf "\n"
 	sleep 4
 	more TempFiles/Clean.txt #Displaying the output of FileCleaner
 	./Div
 	# sorting garbage file
-	echo
-	echo 'Sorting The File'
-	echo
+	printf "\n"
+	printf " [*] Sorting The File"
+	printf "\n"
 	sleep 4
 	echo
 	./FileSorter
@@ -61,9 +60,9 @@ elif [ $x = 'V' ] || [ $x = 'v' ]; then
 	./Div
 	echo
 	sleep 4
-	echo 'Script complete'
-	echo
-	echo 'Output file is TempFiles/Sorted.txt'
+	printf " [+] Script complete"
+	printf "\n"
+	printf ' [+] Output file is TempFiles/Sorted.txt'
 	sleep 1
 	./FileAnalyser
 else
